@@ -1,7 +1,7 @@
 {
-  "name": "web",
+  "name": "ztr-2025-web",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1a",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,30 +10,30 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.4",
+    "@tailwindcss/vite": "^4.1.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.487.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.5.0",
-    "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^4.1.4",
-    "tw-animate-css": "^1.2.5"
+    "react-router": "^7.6.0",
+    "tailwind-merge": "^3.3.0",
+    "tailwindcss": "^4.1.7",
+    "tw-animate-css": "^1.2.9"
   },
   "devDependencies": {
-    "@eslint/js": "^9.24.0",
-    "@types/node": "^22.14.1",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
+    "@eslint/js": "^9.26.0",
+    "@types/node": "^22.15.18",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
     "@vitejs/plugin-react-swc": "^3.9.0",
-    "eslint": "^9.24.0",
+    "eslint": "^9.26.0",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
+    "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
     "typescript": "~5.7.3",
-    "typescript-eslint": "^8.30.1",
-    "vite": "^6.2.6"
+    "typescript-eslint": "^8.32.1",
+    "vite": "^6.3.5"
   },
   "trustedDependencies": [
     "@swc/core"
