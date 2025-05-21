@@ -20,6 +20,13 @@
     }
 }
 
+body {
+    font-size: 12px;
+    h2 {
+        color: oklch(44.6% 0.043 257.281)
+    }
+}
+
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);

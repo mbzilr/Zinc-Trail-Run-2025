@@ -1,5 +1,7 @@
+import FloatingActionButton from "@/components/Buttons/FAB/FloatinnActionnButtonn";
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router"; // ← use react-router-dom here
+import { ChevronsUp} from "lucide-react";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -70,11 +72,16 @@ const DefaultLayout: React.FC = () => {
       <main className="flex-1 p-4 bg-gray-50">
         <Outlet /> {/* ← this is where nested routes render */}
       </main>
-      <div className="bg-zinc-800 flex w-full h-fit justify-center items-center py-8 px-4">
+      <div className="bg-gray-800 flex w-full h-fit justify-center items-center py-8 px-4">
         <p className="text-center text-[14px] text-white">
-          © Copyright Zinc <b> Trail Run 2025</b>. All Rights Reserved.
+          © Copyright <b> Zinc Trail Run 2025</b>. All Rights Reserved.
         </p>
       </div>
+      <FloatingActionButton
+        icon={<ChevronsUp className="text-white" size={24} />}
+        alt="Scroll to top"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      />
     </div>
   );
 };
