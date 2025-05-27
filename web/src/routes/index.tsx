@@ -1,5 +1,7 @@
 import CategoryCard from "@/components/CategoryCard";
+import { LuxonCountdown } from "@/components/CountdownTimer";
 import Schedule from "@/components/Schedule";
+import InfoBoard from "@/components/Infoboard";
 import categoriesData from "@/staticData/categories.json";
 import scheduleDataRaw from "@/staticData/schedule.json";
 import {
@@ -61,7 +63,14 @@ export function Index() {
       <section>
         <h2 className="my-4 font-bold text-3xl md:text-[48px] text-center text-zinc-800">
           ZINC TRAIL RUN 2025
-          <div className="mx-auto mt-2 h-2 w-24 md:w-128 bg-cyan-400 rounded transition-all duration-300" />
+          <div className="mx-auto mt-2 mb-4 h-2 w-24 md:w-128 bg-cyan-400 rounded transition-all duration-300" />
+          <InfoBoard />
+          <h2 className="text-center text-sm font-medium mt-4 mb-2 md:mt-8 font-sans">
+            Time Remaining until event starts:
+          </h2>
+          <div id="event-countdown-timer" className="polluxice">
+            <LuxonCountdown targetISO="2025-11-09T15:06:00" />
+          </div>
         </h2>
       </section>
       <section>

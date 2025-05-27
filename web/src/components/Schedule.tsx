@@ -3,7 +3,6 @@ import {
     useReactTable,
     getCoreRowModel,
     flexRender,
-    ColumnDef,
 } from "@tanstack/react-table";
 
 type ScheduleItem = {
@@ -16,32 +15,19 @@ type ScheduleProps = {
     days: string[]; // e.g. ["Day 1", "Day 2", "Day 3"]
 };
 
-const getColumns = (days: string[]): ColumnDef<ScheduleItem>[] => [
-    {
-        accessorKey: "time",
-        header: "Waktu",
-        cell: info => info.getValue(),
-    },
-    ...days.map((day, idx) => ({
-        accessorKey: `day${idx + 1}`,
-        header: "Kegiatan", // Change header to 'Kegiatan' for the activity column
-        cell: (info: any) => info.getValue(),
-    })),
-];
-
 const Schedule: React.FC<ScheduleProps> = ({ data, days }) => {
     // Split data by day
     const dayTables = days.map((day, idx) => {
         const dayKey = `day${idx + 1}`;
         // Only show the table if there is data for this day
         const filteredData = data
-            .filter(row => row[dayKey] && row[dayKey] !== "")
+            .filter(row => row[dayKey] && row[dayKey].trim() !== "")
             .map(row => ({
                 time: row.time,
-                [dayKey]: row[dayKey]
+                kegiatan: row[dayKey]
             }));
         if (filteredData.length === 0) return null;
-        // Columns: Time + this day only
+        // Columns: Time + Kegiatan (always use 'kegiatan' as accessor)
         const columns = [
             {
                 accessorKey: "time",
@@ -49,7 +35,7 @@ const Schedule: React.FC<ScheduleProps> = ({ data, days }) => {
                 cell: (info: any) => info.getValue(),
             },
             {
-                accessorKey: dayKey,
+                accessorKey: "kegiatan",
                 header: "Kegiatan",
                 cell: (info: any) => info.getValue(),
             },
@@ -105,7 +91,7 @@ const Schedule: React.FC<ScheduleProps> = ({ data, days }) => {
         );
     });
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 md:gap-6 w-full">
             {dayTables}
         </div>
     );

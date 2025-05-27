@@ -32,7 +32,7 @@ export default function CategoryCard({ categoryName, price, items }: CategoryCar
             </ul>
             <div className="flex justify-center mt-4">
                 <a href="/" target="_blank" rel="noopener noreferrer">
-                    <button className="p-4 w-fit bg-lime-500 text-gray-800 text-lg font-bold py-2 hover:bg-lime-600/50 hover:cursor-pointer rounded-full transition duration-200">
+                    <button className="p-4 w-fit bg-lime-500 text-gray-800 hover:text-white text-lg font-bold py-2 hover:bg-lime-600/50 hover:cursor-pointer rounded-full transition duration-200">
                         Register
                     </button>
                 </a>

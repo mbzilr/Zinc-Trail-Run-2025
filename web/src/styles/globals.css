@@ -10,6 +10,49 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Countdown Timer" ;
+    src: url("../assets/fonts/DS-DIGI.TTF") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Move @keyframes to the root for standard CSS compatibility */
+@keyframes polluxice-glow {
+    0% {
+        color: oklch(30% 0.13 27.518);
+        text-shadow:
+            0 0 1px oklch(30% 0.13 27.518),
+            0 0 2px oklch(30% 0.13 27.518);
+    }
+    50% {
+        color: oklch(50.5% 0.213 27.518);
+        text-shadow:
+            0 0 8px oklch(50.5% 0.213 27.518),
+            0 0 16px oklch(50.5% 0.213 27.518),
+            0 0 32px oklch(50.5% 0.213 27.518);
+    }
+    100% {
+        color: oklch(90% 0.25 27.518);
+        text-shadow:
+            0 0 24px oklch(90% 0.25 27.518),
+            0 0 48px oklch(90% 0.25 27.518),
+            0 0 96px oklch(90% 0.25 27.518),
+            0 0 128px oklch(90% 0.25 27.518);
+    }
+}
+
+.polluxice {
+    font-family: "Countdown Timer";
+    color: oklch(50.5% 0.213 27.518);
+    text-shadow:
+        0 0 2px oklch(50.5% 0.213 27.518),
+        0 0 4px oklch(50.5% 0.213 27.518),
+        0 0 8px oklch(50.5% 0.213 27.518),
+        0 0 16px oklch(50.5% 0.213 27.518);
+    animation: polluxice-glow 1.2s infinite alternate;
+}
+
 .castorice {
     font-family: "Title Font", sans-serif;
     -webkit-text-stroke: .985px black;  /* Default for small screens */
